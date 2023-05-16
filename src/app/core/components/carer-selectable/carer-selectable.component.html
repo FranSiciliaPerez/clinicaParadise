@@ -1,0 +1,25 @@
+<ion-accordion-group [multiple]="true" #accordion>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ng-container *ngIf="selectedCarer!=null">
+        <ion-avatar class="carer">
+          <img *ngIf="!selectedCarer?.picture" alt="Silhouette of a task's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img *ngIf="selectedCarer?.picture" alt="task picture" [src]="selectedCarer?.picture" />
+        </ion-avatar>
+        <ion-label>{{selectedCarer?.name}}</ion-label>
+      </ng-container>
+      <ion-label *ngIf="!selectedCarer">Selecciona un cuidador</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let carer of getCarers()" button detail  (click)="onCarerClicked(carer, accordion)">
+          <ion-avatar class="carer">
+            <img *ngIf="!carer.picture" alt="Carer silhouette" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img *ngIf="carer.picture" alt="Carer picture" [src]="carer.picture" />
+          </ion-avatar>
+          <ion-label>{{carer.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

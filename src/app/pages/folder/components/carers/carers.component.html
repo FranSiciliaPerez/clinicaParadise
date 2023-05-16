@@ -1,0 +1,4 @@
+
+<ion-list>
+  <app-carer  *ngFor="let carers of (getCarers() | async)" [_carer]="carers" (onEdit)="onEditCarer($event)" (onDelete)="onDeleteCarer($event)"></app-carer>
+</ion-list>

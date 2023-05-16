@@ -1,0 +1,74 @@
+{
+    "login":{
+        "title":"Iniciar sesión",
+        "email":"Correo",
+        "password":"Contraseña",
+        "send":"Enviar"
+    },
+    "register":{
+        "register":"Registrate",
+        "first_name":"Nombre",
+        "last_name":"Apellidos",
+        "email":"Correo",
+        "password":"Contraseña",
+        "confirm_password":"Repita la contraseña",
+        "send":"Enviar"
+    },
+    "home":{
+        "title":"Clinica Paradise",
+        "welcome":"Bienvenido",
+        "close":"Cerrar sesión"
+    },
+    "folder":{
+        "Home":"Inicio",
+        "Residents":"Residentes",
+        "Carers":"Cuidador",
+        "ResidentManage":"Emparejamiento",
+        "AboutMe":"Sobre Mí"
+    },
+    "picture-edit":{
+        "title":"Cambiar imagen",
+        "library":"Desde la galería",
+        "camera":"Desde la cámara",
+        "file":"Desde tu dispositivo"
+    },
+    "modal":{
+        "close":"Cerrar",
+        "edit":"Editar",
+        "new":"Nuevo",
+        "delete":"Borrar",
+        "export":"Exportar"
+    },
+    "validators":{
+        "passwordMatch": "Las contraseñas no coinciden, asegurese de haber puesto la misma contraseña",
+        "passwordProto": "Debe tener al menos 8 caracteres, una letra mayúscula, una minúscula y un número",
+        "email": "Introduce un email válido"
+    },
+    "pairing-detail":{
+        "residents":"Residentes",
+        "carers":"Cuidadores"
+    },
+    "resident-detail":{
+        "title":"Datos del residente",
+        "name":"Nombre del residente",
+        "name-placeholder":"Introduce el nombre",
+        "surname":"Apellidos",
+        "surnname-placeholder":"Introduce los apellidos",
+        "nickname":"Apodo",
+        "nickname-placeholder":"Introduce el apodo"
+    },
+    "carer-detail":{
+        "title":"Infromacion del cuidador/a",
+        "name":"Nombre del cuidador/a",
+        "name-placeholder":"Introduce el nombre del cuidador",
+        "description":"Descripción",
+        "description-placeholder":"Descripción del cuidador"
+    },
+    "aboutMe":{
+        "text":"Creador de la app: Francisco Javier Sicilia Pérez.",
+        "text2":"Descripcion: Esta aplicacion es solo para uso escolar, realizada en la asignastura Aceso a Datos."
+    },
+    "infoHome":{
+        "info":"Bienvenido a Clinica Paradise"
+    }
+}

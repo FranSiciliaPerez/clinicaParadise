@@ -1,0 +1,26 @@
+<ion-content class="ion-padding">
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item-divider>
+      <ion-label>
+      {{'pairing-detail.residents' | translate}}
+      </ion-label>
+    </ion-item-divider>
+    <app-carer-selectable formControlName="carerId"></app-carer-selectable>
+    <ion-item-divider>
+      <ion-label>
+        {{'pairing-detail.carers' | translate}}
+      </ion-label>
+    </ion-item-divider>
+    <app-resident-selectable formControlName="residentId"></app-resident-selectable>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button  color="medium" [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?('modal.edit' | translate):('modal.new' | translate)}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

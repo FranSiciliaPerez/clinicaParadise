@@ -1,0 +1,3 @@
+<ion-list>
+  <app-manage *ngFor="let manages of (getManages() | async)" [Manage]="manages" (onEdit)="onEditManage($event)" (onDelete)="onDeleteManage($event)"></app-manage>
+</ion-list>

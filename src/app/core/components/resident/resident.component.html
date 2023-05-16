@@ -1,0 +1,32 @@
+<ion-item-sliding #sliding [disabled]="!isLowResolution()">
+  <ion-item>
+    <ion-avatar *ngIf="_resident.picture" class="resident">
+      <img *ngIf="!_resident.picture" alt="Resident silhouette" src="https://ionicframework.com/docs/img/demos/avatar.svg">
+      <img *ngIf="_resident.picture" alt="Resident picture" [src]="_resident.picture"> 
+    </ion-avatar>
+    <ion-label>{{_resident.nickname}}, {{_resident.first_name}}</ion-label>
+    <ion-button class="item-expanded" *ngIf="!isLowResolution()" slot="end" fill="clear" (click)="onEditClick(sliding)">
+      <div class="vertical">
+        <ion-icon name="pencil" ></ion-icon>
+        {{'modal.edit' | translate | uppercase}}
+      </div>
+    </ion-button>
+    <ion-button class="item-expanded" *ngIf="!isLowResolution()" slot="end" fill="clear" color="danger" (click)="onDeleteClick(sliding)">
+      <div class="vertical">
+        <ion-icon name="trash-bin" ></ion-icon>
+        {{'modal.delete' | translate | uppercase}}
+      </div>
+    </ion-button>
+  </ion-item>
+
+  <ion-item-options>
+    <ion-item-option color="success" (click)="onEditClick(sliding)">
+      <ion-icon color="light" slot="top" name="pencil" ></ion-icon>
+      {{'modal.edit' | translate | uppercase}}
+    </ion-item-option>
+    <ion-item-option  color="danger" (click)="onDeleteClick(sliding)">
+      <ion-icon color="light" slot="top" name="trash-bin" ></ion-icon>
+      {{'modal.delete' | translate | uppercase}}
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>

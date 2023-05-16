@@ -1,0 +1,43 @@
+// Estilos para dispositivos de escritorio
+@media only screen and (min-width: 768px) {
+  .container {
+      max-width: 960px;
+      margin: 0 auto;
+  }
+  
+    ion-content{
+      margin-top: 10%;
+      padding: 10px;
+    }
+  
+    ion-img{
+      width: 100%;
+      padding: 1px;
+    }
+    ion-item{
+      width: 50%;
+      margin-left: 25%;
+    }
+  }
+  
+  
+  // Estilos para dispositivos móviles
+  @media only screen and (max-width: 767px) {
+    .container {
+      max-width: 100%;
+      margin: 0;
+      }
+    ion-img{
+      width: 100%;
+      padding: 10px;
+    }
+  
+      ion-button{
+      width: 100%;
+      padding: 2px;
+      margin: auto;
+    }
+  }
+  
+  
+  
