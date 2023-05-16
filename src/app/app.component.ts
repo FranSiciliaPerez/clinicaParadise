@@ -14,7 +14,7 @@ import { IonSplitPane, MenuController } from '@ionic/angular';
 export class AppComponent implements AfterViewInit{
   
   public appPages = [
-    { title: 'Home', url: '/folder/Home', icon: 'home'},
+    { title: 'Home', url: '/folder/Home', icon: 'home', color: '#0f0'},
     { title: 'Residents', url: '/folder/Residents', icon: 'person' },
     { title: 'Carers', url: '/folder/Carers', icon: 'people' },
     { title: 'ResidentManage', url: '/folder/Managements', icon: 'folder' },
@@ -22,7 +22,6 @@ export class AppComponent implements AfterViewInit{
   ];
   public labels = [];
   language = 1; // 0 español, 1 inglés
-  isVisible = true;
   constructor(
     private firebase:FirebaseService,
     private translate: TranslateService,
@@ -33,12 +32,8 @@ export class AppComponent implements AfterViewInit{
     this.init();
     
   }
-
-  toggleMenu(){
-    this.isVisible= false
-  }
   private async init(){
-    this.translate. setDefaultLang('en');
+    this.translate.setDefaultLang('en');
   }
   ngAfterViewInit(): void {
   

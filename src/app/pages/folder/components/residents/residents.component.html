@@ -1,1 +1,8 @@
-<app-resident *ngFor="let residentsdata of (getResidents() | async)" [_resident]="residentsdata" (onEdit)="onEditResident($event)" (onDelete)="onDeleteResident($event)"></app-resident>
+<app-resident
+  *ngFor="let residentsdata of (getResidents() | async)"
+  [_resident]="residentsdata"
+  (onEdit)="onEditResident($event)"
+  (onDelete)="onDeleteResident($event)"
+>
+
+</app-resident>
