@@ -74,8 +74,8 @@ export class ResidentService{
       nickname:resident.nickname,
     };
     if(resident['pictureFile']){
-      var response = await this.uploadImage(resident['pictureFile']);
-      _resident['picture'] = response.image;
+      var response:FileUploaded = await this.uploadImage(resident['pictureFile']);
+      _resident['picture'] = response.file;
     }
     try {
       await this.firebase.createDocument('resident', _resident);  

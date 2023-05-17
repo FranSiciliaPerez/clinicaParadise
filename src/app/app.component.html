@@ -1,9 +1,13 @@
+<ion-fab vertical="bottom" horizontal="end" edge="false" slot="fixed">
+  <ion-fab-button (click)="onLanguage()" color="dark">
+    <ion-icon size="small" name="language-outline" [style.color]="'#0f0'"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 <ion-app>
   <ion-split-pane *ngIf="(user.isLogged$ | async)" contentId="main-content">
     <ion-router-outlet id="main-content"></ion-router-outlet>
     <ion-menu contentId="main-content" type="overlay" side="end">
       <ion-content color="tertiary">
-        <ion-icon name="link-outline" [style.color]="'#0f0'"></ion-icon>
         <ion-img src="./../assets/icon/faviconCruz.jpg"></ion-img>
         <ion-list id="inbox-list">
           <ion-menu-toggle  auto-hide="false" *ngFor="let p of appPages; let i = index">
@@ -15,18 +19,12 @@
           </ion-menu-toggle>
           <ion-menu-toggle auto-hide="false">
             <ion-item (click)="signOut()" button>
-              <ion-icon slot="start" name="log-out"></ion-icon>
+              <ion-icon slot="start" name="exit"></ion-icon>
               <ion-label>{{"home.close" | translate}}</ion-label>
 
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-
-        <ion-fab vertical="bottom" horizontal="start" edge="false" slot="fixed">
-          <ion-fab-button (click)="onLanguage()" color="dark">
-            <ion-icon size="small" name="language-outline"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
       </ion-content>
       
     </ion-menu>

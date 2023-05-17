@@ -12,7 +12,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from './utils/translate';
 import { IonicStorageModule } from '@ionic/storage-angular';
-//import { Residents } from '@ionic/storage';
 import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 import { File } from '@awesome-cordova-plugins/file/ngx';
 
@@ -43,10 +42,6 @@ registerLocaleData(es);
       deps: [HttpClient]
       }
       }),
-    IonicStorageModule.forRoot({
-      name: '__clinicaParadise'
-          //residentOrder: [Residents.IndexedDB, Residents.LocalStorage]
-    }),
     ReactiveFormsModule
   ],
   exports:[

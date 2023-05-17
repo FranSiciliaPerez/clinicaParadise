@@ -76,8 +76,8 @@ export class CarersService {
       description:carerdata.description,
     };
     if(carerdata['pictureFile']){
-      var response = await this.uploadImage(carerdata['pictureFile']);
-      _carer['picture'] = response.image;
+      var response:FileUploaded = await this.uploadImage(carerdata['pictureFile']);
+      _carer['picture'] = response.file;
     }
     try {
       await this.firebase.createDocument('carers', _carer);  
