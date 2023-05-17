@@ -1,23 +1,32 @@
 #inbox-list{
   width: fit-content;
   width: -moz-fit-content;
+  background-color: chocolate;
 }
-ion-img{
+#logo{
   top: 50%;
+  align-self: center;
   margin-bottom: 15px;
   display: block;
-  margin-left: auto;
+  margin-left: 45px;
   margin-right: auto;
+  margin-top: 30%;
   width: 100px;
   height: 100px;
-  
 }
+h6{
+  text-align: left;
+}
+ion-fab{
+  margin-top: 50px;
+}
+
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #9c890a));
 }
 
 ion-menu.md ion-content {
-  --padding-start: 30px;
+  --padding-start: 120px;
   --padding-end: 30px;
   --padding-top: 20px;
   --padding-bottom: 20px;
@@ -25,7 +34,7 @@ ion-menu.md ion-content {
 }
 
 ion-menu.md ion-list {
-  padding: 20px 0;
+  padding: 20px;
 }
 
 ion-menu.md ion-note {
@@ -146,4 +155,10 @@ ion-item.selected {
   
   }
 }
+ion-content{
+  padding-left: 60%;
+}
 
+ion-split-pane{
+  background-color: chocolate;
+}

@@ -1,9 +1,10 @@
 
-  <ion-img class="logo" src="./../../../../../assets/icon/faviconCruz.jpg"></ion-img>
+  
   <ion-row>
     <ion-col>
       <form class="form" [formGroup]="form" (ngSubmit)="onSignIn()">    
         <ion-list>
+          <ion-img class="logo" src="./../../../../../assets/icon/faviconCruz.jpg"></ion-img>
           <ion-item>
             <h1>{{'login.title' | translate}}</h1>
             <ion-label position="stacked">
@@ -19,9 +20,10 @@
           </ion-item>
         </ion-list> 
           <ion-button color="tertiary" [disabled]="!form.valid" (click)="onSignIn()">{{'login.send' | translate}}</ion-button>
+          <ion-button (click)="register()" color="dark" >
+            <small>{{'register.register' | translate }}</small>
+          </ion-button>
       </form>    
     </ion-col>
   </ion-row>
-    <ion-button (click)="register()" color="dark" >
-      <small>{{'register.register' | translate }}</small>
-    </ion-button>
+    

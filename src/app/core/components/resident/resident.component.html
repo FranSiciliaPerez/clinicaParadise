@@ -7,30 +7,9 @@
       </ion-avatar>
       <ion-label>{{_resident.nickname}}, {{_resident.first_name}}</ion-label>
     </div>
-    <div class="buttons">
-      <ion-button class="item-expanded" *ngIf="!isLowResolution()" slot="end" fill="clear" (click)="onEditClick(sliding)">
-        <div class="vertical">
-          <ion-icon name="pencil" ></ion-icon>
-          {{'modal.edit' | translate | uppercase}}
-        </div>
-      </ion-button>
-      <ion-button class="item-expanded" *ngIf="!isLowResolution()" slot="end" fill="clear" color="danger" (click)="onDeleteClick(sliding)">
-        <div class="vertical">
-          <ion-icon name="trash-bin" ></ion-icon>
-          {{'modal.delete' | translate | uppercase}}
-        </div>
-      </ion-button>
-    </div>
+    <ion-card-content>
+      <ion-button color ="tertiary" (click)="onEditClick()"><ion-icon name="pencil-outline"></ion-icon></ion-button>
+      <ion-button color ="danger" (click)="onDeleteClick()"><ion-icon name="trash-bin-outline"></ion-icon></ion-button>
+    </ion-card-content>
   </div>
-
-  <ion-item-options>
-    <ion-item-option color="success" (click)="onEditClick(sliding)">
-      <ion-icon color="light" slot="top" name="pencil" ></ion-icon>
-      {{'modal.edit' | translate | uppercase}}
-    </ion-item-option>
-    <ion-item-option  color="danger" (click)="onDeleteClick(sliding)">
-      <ion-icon color="light" slot="top" name="trash-bin" ></ion-icon>
-      {{'modal.delete' | translate | uppercase}}
-    </ion-item-option>
-  </ion-item-options>
 </ion-item-sliding>

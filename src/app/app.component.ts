@@ -14,14 +14,13 @@ import { IonSplitPane, MenuController } from '@ionic/angular';
 export class AppComponent implements AfterViewInit{
   
   public appPages = [
-    { title: 'Home', url: '/folder/Home', icon: 'home', color: '#0f0'},
+    { title: 'Home', url: '/folder/Home', icon: 'home', /*otra manera de darle color al icono -> [style.color]="p.color" esto iria en el ion icon html y esto en est linea -> color: '#0f0'*/},
     { title: 'Residents', url: '/folder/Residents', icon: 'person' },
     { title: 'Carers', url: '/folder/Carers', icon: 'people' },
     { title: 'ResidentManage', url: '/folder/Managements', icon: 'folder' },
     { title: 'AboutMe', url: '/folder/aboutme', icon: 'heart' },
   ];
   public labels = [];
-  language = 1; // 0 español, 1 inglés
   constructor(
     private firebase:FirebaseService,
     private translate: TranslateService,
@@ -38,19 +37,8 @@ export class AppComponent implements AfterViewInit{
   ngAfterViewInit(): void {
   
   }
-  onLanguage(){
-    this.language = (this.language+1)%2;
-    switch(this.language){
-      case 0:
-        this.translate.setDefaultLang('es');
-        this.locale.registerCulture('es');
-
-        break;
-      case 1:
-        this.translate.setDefaultLang('en');
-        this.locale.registerCulture('en');
-        break;
-    }
+  onLanguage(language:string){
+    this.translate.setDefaultLang(language)
   }
 
   signOut(){

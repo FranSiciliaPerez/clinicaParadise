@@ -52,13 +52,11 @@ export class ManageComponent implements OnInit {
 
   }
 
-  onEditClick(slide:IonItemSliding){
-    slide.close();
+  onEditClick(){
     this.onEdit.emit(this._manage);
   }
 
-  onDeleteClick(slide:IonItemSliding){
-    slide.close();
+  onDeleteClick(){
     this.onDelete.emit(this._manage);
   }
 

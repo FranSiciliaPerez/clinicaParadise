@@ -13,13 +13,6 @@
 }
 
 
-.logo {
-    align-self: center;
-    max-width: 300px;
-    text-align: center;
-}
-
-
 
 // Estilos para dispositivos de escritorio
 @media only screen and (min-width: 768px) {
@@ -35,7 +28,10 @@
     margin-top: 10%;
     padding: 10px;
   }
-
+  ion-img{
+    width: 500px;
+    padding-left: 20%;
+  }
   ion-button{
     width: 25%;
     margin-left: 37.5%;

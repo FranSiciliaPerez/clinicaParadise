@@ -18,13 +18,11 @@ export class CarerComponent implements OnInit {
 
   ngOnInit() {}
 
-  onEditClick(slide:IonItemSliding){
-    slide.close();
+  onEditClick(){
     this.onEdit.emit(this._carer);
   }
 
-  onDeleteClick(slide:IonItemSliding){
-    slide.close();
+  onDeleteClick(){
     this.onDelete.emit(this._carer);
   }
 }
