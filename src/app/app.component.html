@@ -9,6 +9,7 @@
     <ion-menu contentId="main-content" type="overlay" side="end">
       <ion-content color="tertiary">
         <ion-img src="./../assets/icon/faviconCruz.jpg"></ion-img>
+        <h2>{{(user.user$ | async).first_name}} {{(user.user$ | async).last_name}}</h2>
         <ion-list id="inbox-list">
           <ion-menu-toggle  auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">

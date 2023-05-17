@@ -6,7 +6,7 @@
       <img *ngIf="(carer$ | async)?.picture" alt="Carer picture" [src]="(carer$ | async)?.picture" />
     </ion-avatar>
     
-    <ion-icon name="arrow-range"></ion-icon>
+    <ion-icon name="link"></ion-icon>
     <ion-avatar class="resident$">
       {{ (resident$ | async)?.first_name }}
       <img *ngIf="!(resident$ | async)?.picture" alt="Resident silhouette" src="https://ionicframework.com/docs/img/demos/avatar.svg" />

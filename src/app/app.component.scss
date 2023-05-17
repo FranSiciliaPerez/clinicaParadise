@@ -2,9 +2,15 @@
   width: fit-content;
   width: -moz-fit-content;
 }
-ion-img {
-  width: 350px;
-  height: 200px;
+ion-img{
+  top: 50%;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+  
 }
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #9c890a));
