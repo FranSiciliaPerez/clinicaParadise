@@ -8,7 +8,7 @@
         </ion-avatar>
         <ion-label>{{selectedCarer?.name}}</ion-label>
       </ng-container>
-      <ion-label *ngIf="!selectedCarer">Selecciona un cuidador</ion-label>
+      <ion-label *ngIf="!selectedCarer">{{"pairing-detail.select-carer" | translate}}</ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">
       <ion-list>

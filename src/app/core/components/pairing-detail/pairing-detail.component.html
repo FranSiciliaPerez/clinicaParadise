@@ -3,13 +3,13 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item-divider>
       <ion-label>
-      {{'pairing-detail.residents' | translate}}
+      {{'pairing-detail.carers' | translate}}
       </ion-label>
     </ion-item-divider>
     <app-carer-selectable formControlName="carerId"></app-carer-selectable>
     <ion-item-divider>
       <ion-label>
-        {{'pairing-detail.carers' | translate}}
+        {{'pairing-detail.residents' | translate}}
       </ion-label>
     </ion-item-divider>
     <app-resident-selectable formControlName="residentId"></app-resident-selectable>

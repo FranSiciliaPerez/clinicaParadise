@@ -46,7 +46,10 @@
     },
     "pairing-detail":{
         "residents":"Residentes",
-        "carers":"Cuidadores"
+        "carers":"Cuidadores",
+        "select-carer":"Selecciona un cuidador",
+        "select-resident":"Selecciona un residente"
+
     },
     "resident-detail":{
         "title":"Datos del residente",
