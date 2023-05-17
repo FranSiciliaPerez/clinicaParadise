@@ -31,7 +31,8 @@ export class CarerSelectableComponent implements OnInit, ControlValueAccessor {
 
   async writeValue(obj: any) {
     try {
-      this.selectedCarer = await this.tasksSvc.getCarerById(obj);
+      if(obj!='')
+        this.selectedCarer = await this.tasksSvc.getCarerById(obj);
     } catch (error) {
       console.log("No se han podido recuperar los datos: "+ error);
     }

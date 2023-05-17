@@ -27,7 +27,7 @@ export class ManagementsComponent implements OnInit {
     const modal = await this.modal.create({
       component:ManageDetailComponent,
       componentProps:{
-        Manage:manage
+        manage:manage
       },
     });
     modal.present();

@@ -96,17 +96,17 @@ export class ManageService {
     }
   }
 
-  async addManage(Manage:Manage){
+  async addManage(manage:Manage){
     try {
-      await this.firebase.createDocument('residentManage', Manage);  
+      await this.firebase.createDocument('residentManage', manage);  
     } catch (error) {
       console.log(error);
     }
   }
 
-  async updateManage(Manage:Manage){
+  async updateManage(manage:Manage){
     try {
-      await this.firebase.updateDocument('residentManage', Manage.docId, Manage);
+      await this.firebase.updateDocument('residentManage', manage.docId, manage);
     } catch (error) {
       console.log(error);
     }
