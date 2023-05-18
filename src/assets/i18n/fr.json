@@ -44,32 +44,32 @@
         "email": "Vous devez introduire un email valide"
     },
     "pairing-detail":{
-        "residents":"Residents",
-        "carers":"Carers",
-        "select-carer":"Select a carer",
-        "select-resident":"Select a resident"
+        "residents":"Résidents",
+        "carers":"Soignants",
+        "select-carer":"Sélectionnez un soignant",
+        "select-resident":"Sélectionnez un résident"
     },
     "resident-detail":{
-        "title":"Resident details",
-        "name":"Resident name",
-        "name-placeholder":"Write the name",
-        "surname":"Surname",
-        "surnname-placeholder":"Write the surname",
-        "nickname":"Nickname",
-        "nickname-placeholder":"Write the nickname"
+        "title":"Coordonnées du résident",
+        "name":"Nom résident",
+        "name-placeholder":"Écris le nom",
+        "surname":"Nom de famille",
+        "surnname-placeholder":"Écrivez le nom de famille",
+        "nickname":"Surnom",
+        "nickname-placeholder":"Écrivez le surnom"
     },
     "carer-detail":{
-        "title":"Carers info",
-        "name":"Carers Name",
-        "name-placeholder":"Write the name of the carer",
+        "title":"Infos aidants",
+        "name":"Nom de l'aidant",
+        "name-placeholder":"Écrivez le nom du soignant",
         "description":"Description",
-        "description-placeholder":"Write the description of the  carer"
+        "description-placeholder":"Rédigez la description du soignant"
     },
     "aboutMe":{
-        "text":"Creator of this app: Francisco Javier Sicilia Pérez",
-        "text2":"Description: This app uses is for schools only, maked in the subject Data Acces"
+        "text":"Créateur de cette application : Francisco Javier Sicilia Pérez",
+        "text2":"Description: Cette application est réservée aux écoles, faite dans le sujet Accès aux données"
     },
     "infoHome":{
-        "info":"Welcome to Clinica Paradise"
+        "info":"Bienvenue à Clinica Paradise"
     }
 }

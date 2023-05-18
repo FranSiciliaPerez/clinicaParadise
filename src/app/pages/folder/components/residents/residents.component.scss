@@ -1,5 +1,13 @@
 :host {
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    
+    @media (max-width: 400px) {
+        gap: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: dense;
+    }
 }
