@@ -1,7 +1,7 @@
 <ion-content class="ion-padding">
   <input id="fileLoader" type="file" #fileLoader name="files" title="Load Files" hidden>
   <ion-img class="image" *ngIf="currentImage.value" [src]="currentImage$ | async"></ion-img>
-  <ion-img class="image" *ngIf="!currentImage.value" src="https://ionicframework.com/docs/img/demos/thumbnail.svg"></ion-img>
+  <ion-img class="image" *ngIf="!currentImage.value" src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f464.svg"></ion-img>
   <ion-button *ngIf="(platform.isNative$ | async)" expand="full" id="picture-button">{{'picture-edit.title' | translate}}</ion-button>
   <ion-button color="medium" *ngIf="!(platform.isNative$ | async)" expand="full" (click)="changePic(fileLoader, 'file')">{{'picture-edit.title' | translate}}</ion-button>
   <ion-popover *ngIf="platform.isNative$ | async" style="width:100%" trigger="picture-button" [dismissOnSelect]="true">

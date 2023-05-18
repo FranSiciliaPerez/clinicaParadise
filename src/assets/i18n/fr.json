@@ -1,0 +1,75 @@
+{
+    "login":{
+        "title":"S'identifier",
+        "email":"Email",
+        "password":"Mot de passe",
+        "send":"S'identifier"
+    },
+    "register":{
+        "register":"S'inscrire",
+        "first_name":"Prénom",
+        "last_name":"Nom",
+        "email":"Email",
+        "password":"Mot de passe",
+        "confirm_password":"Repetez le mot de passe",
+        "send":"Envoyer"
+    },
+    "home":{
+        "title":"Clinica Paradise",
+        "close":"Se déconnecter"
+    },
+    "folder":{
+        "Home":"Chaimbre",
+        "Residents":"Résidents",
+        "Carers":"Soignants",
+        "ResidentManage":"Jumelage",
+        "AboutMe":"Sur moi"
+    },
+    "picture-edit":{
+        "title":"Changer l'image",
+        "library":"De la galerie",
+        "camera":"De la caméra",
+        "file":"Depuis votre appareil"
+    },
+    "modal":{
+        "close":"Fermer",
+        "edit":"Modifier",
+        "new":"Nouveau",
+        "delete":"Supprimer",
+        "export":"Exportez"
+    },    
+    "validators":{
+        "passwordMatch": "Les mots de passe ne correspondent pas, confirmez que vous avez écrit le même mot de passe deux fois",
+        "passwordProto": "Au moins 8 caractères, une lettre majuscule, une lettre minuscule et un chiffre",
+        "email": "Vous devez introduire un email valide"
+    },
+    "pairing-detail":{
+        "residents":"Residents",
+        "carers":"Carers",
+        "select-carer":"Select a carer",
+        "select-resident":"Select a resident"
+    },
+    "resident-detail":{
+        "title":"Resident details",
+        "name":"Resident name",
+        "name-placeholder":"Write the name",
+        "surname":"Surname",
+        "surnname-placeholder":"Write the surname",
+        "nickname":"Nickname",
+        "nickname-placeholder":"Write the nickname"
+    },
+    "carer-detail":{
+        "title":"Carers info",
+        "name":"Carers Name",
+        "name-placeholder":"Write the name of the carer",
+        "description":"Description",
+        "description-placeholder":"Write the description of the  carer"
+    },
+    "aboutMe":{
+        "text":"Creator of this app: Francisco Javier Sicilia Pérez",
+        "text2":"Description: This app uses is for schools only, maked in the subject Data Acces"
+    },
+    "infoHome":{
+        "info":"Welcome to Clinica Paradise"
+    }
+}

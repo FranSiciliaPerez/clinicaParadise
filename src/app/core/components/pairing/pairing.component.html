@@ -2,13 +2,13 @@
   <div class="card">
     <div class="head">
     <ion-avatar class="carer">
-      <img *ngIf="!(carer$ | async)?.picture" alt="Carer silhouette" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      <img *ngIf="!(carer$ | async)?.picture" alt="Carer silhouette" src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f464.svg" />
       <img *ngIf="(carer$ | async)?.picture" alt="Carer picture" [src]="(carer$ | async)?.picture" />
       <label>{{ (carer$ | async)?.name }}</label>
     </ion-avatar>
     <ion-icon name="link"></ion-icon>
     <ion-avatar class="resident$">
-      <img *ngIf="!(resident$ | async)?.picture" alt="Resident silhouette" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      <img *ngIf="!(resident$ | async)?.picture" alt="Resident silhouette" src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f464.svg" />
       <img *ngIf="(resident$ | async)?.picture" alt="Resident picture" [src]="(resident$ | async)?.picture" />
       {{ (resident$ | async)?.first_name }}
     </ion-avatar>
