@@ -3,7 +3,6 @@ import { DocumentData } from 'firebase/firestore';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Resident } from '../models/residents.model';
 import { FileUploaded, FirebaseService } from './firebase/firebase-service';
-import { HttpClientProvider } from './http-client.provider';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,7 @@ export class ResidentService{
   constructor(
     private firebase:FirebaseService
   ) {
-    this.unsubscr = this.firebase.subscribeToCollection('resident',this._residentSubject, this.mapResident);
+    this.unsubscr = this.firebase.subscribeToCollection('residents',this._residentSubject, this.mapResident);
   }
 
   ngOnDestroy(): void {
@@ -31,7 +30,7 @@ export class ResidentService{
       first_name:doc.data().first_name,
       last_name:doc.data().last_name,
       nickname:doc.data().nickname,
-      picture:doc.data().picture,
+      picture:doc.data().picture
     };
   }
 
@@ -43,14 +42,14 @@ export class ResidentService{
   getResidentById(id:string):Promise<Resident>{
     return new Promise<Resident>(async (resolve, reject)=>{
       try {
-        var resident = (await this.firebase.getDocument('resident', id));
+        var resident = (await this.firebase.getDocument('residents', id));
         resolve({
           id:0,
           docId:resident.id,
           first_name:resident.data.first_name,
           last_name:resident.data.last_name,
           nickname:resident.data.nickname,
-          picture:resident.data.picture, 
+          picture:resident.data.picture
         });  
       } catch (error) {
         reject(error);
@@ -60,7 +59,8 @@ export class ResidentService{
 
   async deleteResident(resident:Resident){
     try {
-      await this.firebase.deleteDocument('resident', resident.docId);  
+      if(resident)
+        await this.firebase.deleteDocument('residents', resident.docId);  
     } catch (error) {
       console.log(error);
     }
@@ -68,17 +68,18 @@ export class ResidentService{
 
   async addResident(resident:Resident){
     var _resident = {
-      docId:resident.id,
+      id:0,
+      docId:resident.docId,
       first_name:resident.first_name,
       last_name:resident.last_name,
       nickname:resident.nickname,
     };
     if(resident['pictureFile']){
-      var response:FileUploaded = await this.uploadImage(resident['pictureFile']);
-      _resident['picture'] = response.file;
+      var response = await this.uploadImage(resident['pictureFile']);
+      _resident['picture'] = response.image;
     }
     try {
-      await this.firebase.createDocument('resident', _resident);  
+      await this.firebase.createDocument('residents', _resident);  
     } catch (error) {
       console.log(error);
     }
@@ -97,6 +98,7 @@ export class ResidentService{
 
   async updateResident(resident:Resident){
     var _resident = {
+      id:0,
       docId:resident.docId,
       first_name:resident.first_name,
       last_name:resident.last_name,
@@ -107,10 +109,14 @@ export class ResidentService{
       _resident['picture'] = response.file;
     }
     try {
-      await this.firebase.updateDocument('resident', resident.docId, _resident);  
+      await this.firebase.updateDocument('residents', _resident.docId, _resident);  
     } catch (error) {
       console.log(error);
     }
-      
-  }
+  }  
+    async writeToFile(){
+      var dataToText = JSON.stringify(this._residentSubject.value);
+      var data = new Blob([dataToText], {type: 'text/plain'});
+      this.firebase.fileUpload(data, 'text/plain', 'residents', '.txt');
+    }
 }

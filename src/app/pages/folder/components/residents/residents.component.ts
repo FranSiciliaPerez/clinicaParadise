@@ -13,24 +13,22 @@ import { Resident } from 'src/app/core/models/residents.model';
 export class ResidentsComponent implements OnInit {
   constructor(
     private residentsSvc:ResidentService,
-    private ManagesSvc:ManageService,
+    private manageSvc:ManageService,
     private modal:ModalController,
     private alert:AlertController,
   ) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   getResidents(){
     return this.residentsSvc.resident$;
   }
 
-  async presentResidentForm(residentData:Resident){
+  async presentResidentForm(resident:Resident){
     const modal = await this.modal.create({
       component:ResidentDetailComponent,
       componentProps:{
-        resident:residentData
+        resident:resident
       },
     });
     modal.present();
@@ -49,11 +47,11 @@ export class ResidentsComponent implements OnInit {
     });
   }
 
-  onEditResident(residentData){
-    this.presentResidentForm(residentData);
+  onEditResident(resident){
+    this.presentResidentForm(resident);
   }
 
-  async onDeleteAlert(residentData){
+  async onDeleteAlert(resident){
     const alert = await this.alert.create({
       header:'Atención',
       message: '¿Está seguro de que desear borrar al residente?',
@@ -69,7 +67,7 @@ export class ResidentsComponent implements OnInit {
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            this.residentsSvc.deleteResident(residentData);
+            this.residentsSvc.deleteResident(resident);
           },
         },
       ],
@@ -80,7 +78,7 @@ export class ResidentsComponent implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onResidentExistsAlert(residentData){
+  async onResidentExistsAlert(resident){
     const alert = await this.alert.create({
       header: 'Error',
       message: 'No es posible borrar el residente porque está asignado a un cuidador',
@@ -100,10 +98,13 @@ export class ResidentsComponent implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onDeleteResident(residentData){
-      if((await this.ManagesSvc.getManagesByResidentId(residentData.id)).length==0)
-      this.onDeleteAlert(residentData);
+  async onDeleteResident(resident){
+      if((await this.manageSvc.getManagesByResidentId(resident.id)).length==0)
+      this.onDeleteAlert(resident);
     else
-      this.onResidentExistsAlert(residentData);
+      this.onResidentExistsAlert(resident);
+  }
+  async onExport(){
+    this.residentsSvc.writeToFile();
   }
 }

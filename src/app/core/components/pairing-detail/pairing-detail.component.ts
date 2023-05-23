@@ -21,6 +21,7 @@ export class ManageDetailComponent implements OnInit {
     console.log(manage)
     if(manage){
       this.form.controls.id.setValue(manage.id);
+      this.form.controls.docId.setValue(manage.docId);
       this.form.controls.carerId.setValue(manage.carerId);
       this.form.controls.residentId.setValue(manage.residentId);
       this.mode = "Edit";
@@ -39,6 +40,7 @@ export class ManageDetailComponent implements OnInit {
   ) { 
     this.form = this.fb.group({
       id:[0],
+      docId:[''],
       carerId:['', [Validators.min(1)]],
       residentId:['', [Validators.min(1)]],
     });

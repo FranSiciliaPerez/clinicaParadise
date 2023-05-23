@@ -20,7 +20,7 @@ export class ManagementsComponent implements OnInit {
   ngOnInit() {}
 
   getManages(){
-    return this.manageSvc.Manages$;
+    return this.manageSvc.manages$;
   }
 
   async presentManageForm(manage:Manage){
@@ -66,7 +66,7 @@ export class ManagementsComponent implements OnInit {
           role: 'confirm',
           handler: () => {
             console.log(manage)
-            this.manageSvc.deleteManageById(manage.id);
+            this.manageSvc.deleteManageById(manage.docId);
           },
         },
       ],
