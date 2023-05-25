@@ -70,6 +70,7 @@
         "text2":"Description: Cette application est réservée aux écoles, faite dans le sujet Accès aux données"
     },
     "infoHome":{
-        "info":"Bienvenue à Clinica Paradise"
+        "info":"Bienvenue sur l'application : Clinica Paradise précise pour la gestion d'une résidence pour personnes âgées.",
+        "schema":"Dans la barre latérale droite, vous pouvez voir 6 sections différentes, celle qui apparaît sélectionnée en ce moment, appartient à la page principale 'Maison', où vient l'explication de la structure. Dans la deuxième section, il y a tous les gardiens de la résidence, dans la troisième se trouvent les résidents, dans la quatrième les résidents et leurs gardiens respectifs, dans la cinquième il y a des informations sur le développeur de l'application et enfin dans la sixième se trouve le bouton clôturer la session."
     }
 }
