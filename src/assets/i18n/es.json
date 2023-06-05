@@ -75,4 +75,8 @@
         "info":"Bienvenido a la aplicación: Clinica Paradise especifica para la gestión de una residencia de personas mayores.",
         "schema":"En la barra lateral derecha, podrás observar 6 secciones diferentes, la que aparece seleccionada ahora mismo, pertenece a la pagina principal 'Casa', donde vienen la explicación de la estructura. En la segunda sección se encuentran todos los cuidadores de la residencia, en la tercera están los residentes, en la cuarta los residentes y sus respectivos cuidadores, en la quinta hay informacion sobre el desarrollador de la app y por último en la sexta está el botón de cerrar sesion."
     }
+    ,
+    "user":{
+        "log":"Logeado como: "
+    }
 }

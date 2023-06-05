@@ -72,5 +72,8 @@
     "infoHome":{
         "info":"Welcome to the application: Clinica Paradise specifically for the management of a residence for the elderly.",
         "schema":"In the right sidebar, you can see 6 different sections, the one that appears selected right now, belongs to the main page 'House', where the explanation of the structure comes. In the second section there are all the caretakers of the residence, in the third are the residents, in the fourth the residents and their respective caretakers, in the fifth there is information about the developer of the app and finally in the sixth is the button to close session."
+    },
+    "user":{
+        "log":"Logged as: "
     }
 }
