@@ -22,7 +22,7 @@
         <ion-img id="logo" src="./../assets/icon/faviconCruz.jpg"></ion-img>
         
         <ion-list id="inbox-list">
-          <h6>{{"user.log" | translate}}{{(user.user$ | async).first_name}}</h6>
+          <h6>{{"user.log" | translate}}{{(user.user$ | async).first_name}} {{(user.user$ | async).last_name}}</h6>
           <ion-menu-toggle  auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
@@ -33,6 +33,7 @@
             <ion-item (click)="signOut()" button>
               <ion-icon slot="start" name="exit"></ion-icon>
               <ion-label>{{"home.close" | translate}}</ion-label>
+              <ion-badge color="warning">1</ion-badge>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
