@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { UserService } from 'src/app/core/services/user.service';
 import { RegisterComponent } from '../register/register.component';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-signin',
@@ -17,7 +18,8 @@ export class SigninComponent implements OnInit {
     private formBuilder:FormBuilder,
     private modalCtrl:ModalController,
     private user:UserService,
-    private router:Router
+    private router:Router,
+    private loadingCtrl: LoadingController
   ) { 
     this.form = this.formBuilder.group({
       identifier:["", [Validators.required, Validators.email]],
@@ -69,5 +71,13 @@ export class SigninComponent implements OnInit {
     else
       return [];
   } 
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading...',
+      duration: 500,
+    });
+
+    loading.present();
+  }
 
 }

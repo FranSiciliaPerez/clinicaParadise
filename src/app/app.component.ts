@@ -5,6 +5,7 @@ import { FirebaseService } from './core/services/firebase/firebase-service';
 import { LocaleService } from './core/services/locale.service';
 import { UserService } from './core/services/user.service';
 import { IonSplitPane, MenuController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,7 @@ export class AppComponent implements AfterViewInit{
     private locale:LocaleService,
     public user:UserService,
     private router:Router,
+    private loadingCtrl: LoadingController
   ) {
     this.init();
     
@@ -44,6 +46,14 @@ export class AppComponent implements AfterViewInit{
   signOut(){
     this.user.signOut();
     this.router.navigate(['login']);
+  }
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading...',
+      duration: 500,
+    });
+
+    loading.present();
   }
 
 }

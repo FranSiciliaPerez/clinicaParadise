@@ -19,7 +19,7 @@
             <ion-input (keyup.enter)="form.valid?onSignIn():null" [enterkeyhint]="'enter'" autocomplete="password" type="password" formControlName="password"></ion-input>
           </ion-item>
         </ion-list> 
-          <ion-button color="tertiary" [disabled]="!form.valid" (click)="onSignIn()">{{'login.send' | translate}}</ion-button>
+          <ion-button color="tertiary" [disabled]="!form.valid" (click)="onSignIn()" (click)="showLoading()">{{'login.send' | translate}}</ion-button>
           <ion-button (click)="register()" color="dark" >
             <small>{{'register.register' | translate }}</small>
           </ion-button>

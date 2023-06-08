@@ -53,8 +53,7 @@
     </ion-item>
   </ion-list> 
   <div class="form-button right">
-    <ion-button [disabled]="!form.valid" (click)="onRegister()">{{'register.send' | translate}}</ion-button>
-    <!--<ion-loading trigger="open-loading" message="Dismissing after 3 seconds..." duration="3000"></ion-loading>-->
+    <ion-button [disabled]="!form.valid" (click)="onRegister()"(click)="showLoading()">{{'register.send' | translate}}</ion-button>
   </div>
 </form>
 </ion-content>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { PasswordValidation } from 'src/app/core/utils/password-validator';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,8 @@ export class RegisterComponent implements OnInit {
   form:FormGroup;
   constructor(
     private formBuilder:FormBuilder,
-    private modalCtrl:ModalController
+    private modalCtrl:ModalController,
+    private loadingCtrl: LoadingController
   ) {
     this.form = this.formBuilder.group({
       first_name:["", Validators.required],
@@ -47,5 +49,12 @@ export class RegisterComponent implements OnInit {
     else
       return [];
   } 
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading...',
+      duration: 500,
+    });
 
+    loading.present();
+  }
 }
