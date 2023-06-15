@@ -22,7 +22,7 @@
       <ion-content color="tertiary">
         <ion-img id="logo" src="./../assets/icon/faviconCruz.jpg"></ion-img>
         <ion-list id="inbox-list">
-          <!--Editarlo--><ion-fab vertical="top" horizontal="end" slot="fixed">
+          <ion-fab id="boton" vertical="top" horizontal="end">
             <ion-button id="click-trigger">User click me<ion-badge color="warning">1</ion-badge></ion-button>
             <ion-popover trigger="click-trigger" triggerAction="click">
               <ng-template>
@@ -31,17 +31,6 @@
               </ng-template>
             </ion-popover>
           </ion-fab>
-          <!--Editarlo-->
-          <ion-button id="hover-trigger">Pon el raton encima</ion-button>
-          <ion-popover trigger="hover-trigger" triggerAction="hover">
-            <ng-template>
-              <ion-content class="ion-padding">Hello World!</ion-content>
-            </ng-template>
-          </ion-popover>
-          <h6>
-            <ion-badge color="warning">1</ion-badge>
-            {{"user.log" | translate}}{{(user.user$ | async).first_name}} {{(user.user$ | async).last_name}}
-          </h6>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
               routerLinkActive="selected">
