@@ -1,5 +1,3 @@
-
-  
   <ion-row>
     <ion-col>
       <form class="form" [formGroup]="form" (ngSubmit)="onSignIn()">    
@@ -16,7 +14,11 @@
             <ion-label position="stacked">
               {{'login.password' | translate}}
             </ion-label>
-            <ion-input (keyup.enter)="form.valid?onSignIn():null" [enterkeyhint]="'enter'" autocomplete="password" type="password" formControlName="password"></ion-input>
+            <ion-input  [enterkeyhint]="'next'" autocomplete="password" type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>I agree terms & conditions</ion-label>
+            <ion-checkbox (keyup.enter)="form.valid?onSignIn():null" type="checkbox" formControlName="checkbox"></ion-checkbox>
           </ion-item>
         </ion-list> 
           <ion-button color="tertiary" [disabled]="!form.valid" (click)="onSignIn()" (click)="showLoading()">{{'login.send' | translate}}</ion-button>

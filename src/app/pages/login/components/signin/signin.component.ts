@@ -23,7 +23,8 @@ export class SigninComponent implements OnInit {
   ) { 
     this.form = this.formBuilder.group({
       identifier:["", [Validators.required, Validators.email]],
-      password:["", Validators.required]
+      password:["", Validators.required],
+      checkbox: ["false", Validators.requiredTrue]
     });
     
   }

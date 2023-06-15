@@ -51,6 +51,10 @@
         *ngIf="hasFormError('passwordMatch') && form.get('confirmPassword').value"
         >{{'validators.passwordMatch' | translate}}</span>
     </ion-item>
+    <ion-item>
+      <label>I agree terms & conditions</label>
+      <ion-checkbox type="checkbox" formControlName="checkbox"></ion-checkbox>
+    </ion-item>
   </ion-list> 
   <div class="form-button right">
     <ion-button [disabled]="!form.valid" (click)="onRegister()"(click)="showLoading()">{{'register.send' | translate}}</ion-button>
