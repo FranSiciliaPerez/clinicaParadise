@@ -1,3 +1,5 @@
+<ion-progress-bar type="indeterminate"></ion-progress-bar>
+<ion-searchbar></ion-searchbar>
 <app-manage *ngFor="let manages of (getManages() | async)"
  [Manage]="manages" 
  (onEdit)="onEditManage($event)" 
