@@ -52,17 +52,17 @@ export class ManagementsComponent implements OnInit {
 
   async onDeleteAlert(manage){
     const alert = await this.alert.create({
-      header: '¿Está seguro de que desear borrar la asignación de tarea?',
+      header: '¿Are you sure you want to erase the selected assignation?',
       buttons: [
         {
-          text: 'Cancelar',
+          text: 'Cancel',
           role: 'cancel',
           handler: () => {
-            console.log("Operacion cancelada");
+            console.log("Operation canceled");
           },
         },
         {
-          text: 'Borrar',
+          text: 'Erase',
           role: 'confirm',
           handler: () => {
             console.log(manage)

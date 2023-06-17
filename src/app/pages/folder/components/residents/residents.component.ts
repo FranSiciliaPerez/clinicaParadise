@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 import { ManageService } from 'src/app/core/services/manage.service';
-import { ResidentDetailComponent} from 'src/app/core/components/resident-detail/resident-detail.component';
-import { ResidentService} from 'src/app/core/services/resident.service';
+import { ResidentDetailComponent } from 'src/app/core/components/resident-detail/resident-detail.component';
+import { ResidentService } from 'src/app/core/services/resident.service';
 import { Resident } from 'src/app/core/models/residents.model';
 
 @Component({
@@ -12,29 +12,29 @@ import { Resident } from 'src/app/core/models/residents.model';
 })
 export class ResidentsComponent implements OnInit {
   constructor(
-    private residentsSvc:ResidentService,
-    private manageSvc:ManageService,
-    private modal:ModalController,
-    private alert:AlertController,
+    private residentsSvc: ResidentService,
+    private manageSvc: ManageService,
+    private modal: ModalController,
+    private alert: AlertController,
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  getResidents(){
+  getResidents() {
     return this.residentsSvc.resident$;
   }
 
-  async presentResidentForm(resident:Resident){
+  async presentResidentForm(residentData: Resident) {
     const modal = await this.modal.create({
-      component:ResidentDetailComponent,
-      componentProps:{
-        resident:resident
+      component: ResidentDetailComponent,
+      componentProps: {
+        resident: residentData
       },
     });
     modal.present();
-    modal.onDidDismiss().then(result=>{
-      if(result && result.data){
-        switch(result.data.mode){
+    modal.onDidDismiss().then(result => {
+      if (result && result.data) {
+        switch (result.data.mode) {
           case 'New':
             this.residentsSvc.addResident(result.data.resident);
             break;
@@ -47,27 +47,27 @@ export class ResidentsComponent implements OnInit {
     });
   }
 
-  onEditResident(resident){
-    this.presentResidentForm(resident);
+  onEditResident(residentData) {
+    this.presentResidentForm(residentData);
   }
 
-  async onDeleteAlert(resident){
+  async onDeleteAlert(residentData) {
     const alert = await this.alert.create({
-      header:'Atención',
-      message: '¿Está seguro de que desear borrar al residente?',
+      header: 'Atention',
+      message: '¿Are you sure you want to erase the selected resident?',
       buttons: [
         {
-          text: 'Cancelar',
+          text: 'Cancel',
           role: 'cancel',
           handler: () => {
-            console.log("Operacion cancelada");
+            console.log("Operation canceled");
           },
         },
         {
-          text: 'Borrar',
+          text: 'Erase',
           role: 'confirm',
           handler: () => {
-            this.residentsSvc.deleteResident(resident);
+            this.residentsSvc.deleteResident(residentData);
           },
         },
       ],
@@ -78,16 +78,16 @@ export class ResidentsComponent implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onResidentExistsAlert(resident){
+  async onResidentExistsAlert(residentData) {
     const alert = await this.alert.create({
       header: 'Error',
-      message: 'No es posible borrar el residente porque está asignado a un cuidador',
+      message: 'Is not posible to erase it because is asigned to a carer',
       buttons: [
         {
-          text: 'Cerrar',
+          text: 'Close',
           role: 'close',
           handler: () => {
-          
+
           },
         },
       ],
@@ -98,13 +98,13 @@ export class ResidentsComponent implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onDeleteResident(resident){
-      if((await this.manageSvc.getManagesByResidentId(resident.id)).length==0)
-      this.onDeleteAlert(resident);
+  async onDeleteResident(residentData) {
+    if ((await this.manageSvc.getManagesByResidentId(residentData.docId)).length == 0)
+      this.onDeleteAlert(residentData);
     else
-      this.onResidentExistsAlert(resident);
+      this.onResidentExistsAlert(residentData);
   }
-  async onExport(){
+  async onExport() {
     this.residentsSvc.writeToFile();
   }
 }

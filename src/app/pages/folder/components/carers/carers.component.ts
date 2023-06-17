@@ -55,18 +55,18 @@ export class CarersComponent implements OnInit {
   async onDeleteAlert(carerdata){
 
     const alert = await this.alert.create({
-      header: 'Atención',
-      message: '¿Está seguro de que desear borrarlo?',
+      header: 'Atention',
+      message: '¿Are you sure you want to erase the selected carer?',
       buttons: [
         {
-          text: 'Cancelar',
+          text: 'Cancel',
           role: 'cancel',
           handler: () => {
-            console.log("Operacion cancelada");
+            console.log("Operation canceled");
           },
         },
         {
-          text: 'Borrar',
+          text: 'Erase',
           role: 'confirm',
           handler: () => {
             this.CarersSvc.deleteCarer(carerdata);
@@ -83,10 +83,10 @@ export class CarersComponent implements OnInit {
   async onCarerExistsAlert(carerdata){
     const alert = await this.alert.create({
       header: 'Error',
-      message: 'No es posible borrarlo porque está asignado a un residente',
+      message: 'Is not posible to erase it because is asigned to a resident',
       buttons: [
         {
-          text: 'Cerrar',
+          text: 'Close',
           role: 'close',
           handler: () => {
           
