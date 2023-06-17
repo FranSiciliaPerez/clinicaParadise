@@ -43,6 +43,7 @@
     <ion-row>
       <ion-col class="ion-text-center">
         <ion-button color="medium" [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?('modal.edit' | translate):('modal.new' | translate)}}</ion-button>
+        <ion-button color="danger" (click)="onDismiss(null)">{{'modal.cancel' | translate}}</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

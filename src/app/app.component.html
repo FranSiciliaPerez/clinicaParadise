@@ -21,16 +21,16 @@
     <ion-menu contentId="main-content" type="overlay" side="end">
       <ion-content color="tertiary">
         <ion-img id="logo" src="./../assets/icon/faviconCruz.jpg"></ion-img>
+        <ion-fab id="boton" vertical="top" horizontal="end">
+          <ion-button id="click-trigger">User click me<ion-badge color="warning">1</ion-badge></ion-button>
+          <ion-popover trigger="click-trigger" triggerAction="click">
+            <ng-template>
+              <ion-content class="ion-padding">{{"user.log" | translate}}{{(user.user$ | async).first_name}}
+                {{(user.user$ | async).last_name}}</ion-content>
+            </ng-template>
+          </ion-popover>
+        </ion-fab>
         <ion-list id="inbox-list">
-          <ion-fab id="boton" vertical="top" horizontal="end">
-            <ion-button id="click-trigger">User click me<ion-badge color="warning">1</ion-badge></ion-button>
-            <ion-popover trigger="click-trigger" triggerAction="click">
-              <ng-template>
-                <ion-content class="ion-padding">{{"user.log" | translate}}{{(user.user$ | async).first_name}}
-                  {{(user.user$ | async).last_name}}</ion-content>
-              </ng-template>
-            </ion-popover>
-          </ion-fab>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
               routerLinkActive="selected">

@@ -35,6 +35,7 @@
     "modal":{
         "close":"Cerrar",
         "edit":"Editar",
+        "cancel":"Cancelar",
         "new":"Nuevo",
         "delete":"Borrar",
         "export":"Exportar"
