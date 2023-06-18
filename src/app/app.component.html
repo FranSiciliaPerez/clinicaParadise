@@ -1,35 +1,19 @@
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button color="dark">
-    <ion-icon size="big" name="language-outline" [style.color]="'chocolate'"></ion-icon>
-  </ion-fab-button>
-  <ion-fab-list side="top">
-    <ion-fab-button (click)="onLanguage('en')">
-      <ion-img src="../assets/icon/logoGB.png"></ion-img>
-    </ion-fab-button>
-    <ion-fab-button (click)="onLanguage('es')">
-      <ion-img src="../assets/icon/logoES.png"></ion-img>
-    </ion-fab-button>
-    <ion-fab-button (click)="onLanguage('fr')">
-      <ion-img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1eb-1f1f7.svg"></ion-img>
-    </ion-fab-button>
-  </ion-fab-list>
-</ion-fab>
+
 
 <ion-app>
   <ion-split-pane *ngIf="(user.isLogged$ | async)" contentId="main-content">
     <ion-router-outlet id="main-content"></ion-router-outlet>
-    <ion-menu contentId="main-content" type="overlay" side="end">
+    <ion-menu contentId="main-content" type="push" side="end">
       <ion-content color="tertiary">
         <ion-img id="logo" src="./../assets/icon/faviconCruz.jpg"></ion-img>
-        <ion-fab id="boton" vertical="top" horizontal="end">
-          <ion-button id="click-trigger">User click me<ion-badge color="warning">1</ion-badge></ion-button>
+        
+          <ion-button id="click-trigger" vertical="top" horizontal="end">User click me<ion-badge color="warning">1</ion-badge></ion-button>
           <ion-popover trigger="click-trigger" triggerAction="click">
             <ng-template>
               <ion-content class="ion-padding">{{"user.log" | translate}}{{(user.user$ | async).first_name}}
                 {{(user.user$ | async).last_name}}</ion-content>
             </ng-template>
           </ion-popover>
-        </ion-fab>
         <ion-list id="inbox-list">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
@@ -45,7 +29,25 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button color="dark">
+            <ion-icon size="big" name="language-outline" [style.color]="'chocolate'"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-list side="top">
+            <ion-fab-button (click)="onLanguage('en')">
+              <ion-img src="../assets/icon/logoGB.png"></ion-img>
+            </ion-fab-button>
+            <ion-fab-button (click)="onLanguage('es')">
+              <ion-img src="../assets/icon/logoES.png"></ion-img>
+            </ion-fab-button>
+            <ion-fab-button (click)="onLanguage('fr')">
+              <ion-img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1eb-1f1f7.svg"></ion-img>
+            </ion-fab-button>
+          </ion-fab-list>
+        </ion-fab>
+
       </ion-content>
+
     </ion-menu>
   </ion-split-pane>
   <ion-router-outlet *ngIf="!(user.isLogged$ | async)"></ion-router-outlet>

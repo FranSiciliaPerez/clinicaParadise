@@ -28,6 +28,7 @@ export class AppComponent implements AfterViewInit{
     private locale:LocaleService,
     public user:UserService,
     private router:Router,
+    private menuController: MenuController,//creo q es esto
     private loadingCtrl: LoadingController
   ) {
     this.init();
@@ -46,6 +47,9 @@ export class AppComponent implements AfterViewInit{
   signOut(){
     this.user.signOut();
     this.router.navigate(['login']);
+  }
+  closeMenuToggle() {
+    this.menuController.toggle(); //y esto
   }
   async showLoading() {
     const loading = await this.loadingCtrl.create({
