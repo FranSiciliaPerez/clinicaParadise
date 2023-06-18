@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder:FormBuilder,
     private modalCtrl:ModalController,
+    private modal:ModalController,
     private loadingCtrl: LoadingController
   ) {
     this.form = this.formBuilder.group({
@@ -49,6 +50,9 @@ export class RegisterComponent implements OnInit {
       return [Object.keys(errors)[0]];
     else
       return [];
+  }
+  onDismiss(result) {
+    this.modal.dismiss(null, 'cancel');
   } 
   async showLoading() {
     const loading = await this.loadingCtrl.create({

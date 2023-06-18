@@ -58,6 +58,7 @@
   </ion-list> 
   <div class="form-button right">
     <ion-button [disabled]="!form.valid" (click)="onRegister()"(click)="showLoading()">{{'register.send' | translate}}</ion-button>
+    <ion-button color="danger" (click)="onDismiss(null)">{{'modal.cancel' | translate}}</ion-button>
   </div>
 </form>
 </ion-content>
