@@ -4,7 +4,7 @@
     <ion-avatar class="carer">
       <img *ngIf="!(carer$ | async)?.picture" alt="Carer silhouette" src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f464.svg" />
       <img *ngIf="(carer$ | async)?.picture" alt="Carer picture" [src]="(carer$ | async)?.picture" />
-      <label>{{ (carer$ | async)?.name }}</label>
+      {{ (carer$ | async)?.name }}
     </ion-avatar>
     <ion-icon name="chevron-down-outline"></ion-icon>
     <!--<ion-icon name="arrow-up"></ion-icon>
