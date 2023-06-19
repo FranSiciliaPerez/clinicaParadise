@@ -7,6 +7,7 @@
         <ion-fab vertical="top" horizontal="end" slot="fixed">
           <ion-button id="hover-trigger" (click)="showLoading()" (click)="signOut()" button>
             <ion-icon slot="start" name="close-circle-outline" [style.color]="'red'"></ion-icon>
+            <ion-label>{{"home.close" | translate}}</ion-label>
           </ion-button>
         </ion-fab>
         <ion-icon  id="click-trigger" vertical="top" horizontal="end" name="person-circle-outline"></ion-icon>

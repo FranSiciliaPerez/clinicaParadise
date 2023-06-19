@@ -14,26 +14,4 @@
     </div>
     </ion-row>
 </ion-grid>
-<ion-app>
-  <ion-content fullscreen class="ion-padding" scroll-y="false">
-    <ion-slides>
-      <ion-slide class="slide">
-        <h2>{{ 'welcome' | translate }} {{ (user.user$ | async).first_name }} {{ (user.user$ | async).last_name }}</h2>
-        <p>{{ 'homeText1' | translate }}</p>
-        <img src="../../../../../assets/images/fotos/carer.jpg" alt="Logo" />
-      </ion-slide>
-
-      <ion-slide class="slide">
-        <p>{{ 'homeText2' | translate }}</p>
-        <img src="../../../../../assets/images/fotos/mayorFeliz.jpg" alt="Reloj" />
-      </ion-slide>
-
-      <ion-slide class="slide">
-        <p>{{ 'homeText3' | translate }}</p>
-        <img src="../../../../../assets/images/fotos/resident.jpg" alt="Comenzar" />
-      </ion-slide>
-    </ion-slides>
-  </ion-content>
-  <ion-progress-bar type="indeterminate"></ion-progress-bar>
-</ion-app>
 
