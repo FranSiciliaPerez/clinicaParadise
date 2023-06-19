@@ -5,8 +5,8 @@
         <img *ngIf="!_carer.picture" alt="Carer silhouette" src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f464.svg" />
         <img *ngIf="_carer.picture" alt="Carer picture" [src]="_carer.picture" />
       </ion-avatar>
-    <br><ion-label>{{_carer.name}}</ion-label><br>
-    <ion-label>{{_carer.description}}</ion-label>
+      <ion-label>{{_carer.name}}</ion-label>
+      <ion-label>{{_carer.description}}</ion-label>
     </div>
     <ion-card-content>
       <ion-button color ="tertiary" (click)="onEditClick()"><ion-icon name="pencil-outline"></ion-icon></ion-button>
