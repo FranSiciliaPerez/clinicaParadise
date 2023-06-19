@@ -7,8 +7,6 @@
       {{ (carer$ | async)?.name }}
     </ion-avatar>
     <ion-icon name="chevron-down-outline"></ion-icon>
-    <!--<ion-icon name="arrow-up"></ion-icon>
-    <ion-icon name="arrow-forward"></ion-icon>-->
     <ion-avatar class="resident$">
       <img *ngIf="!(resident$ | async)?.picture" alt="Resident silhouette" src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f464.svg" />
       <img *ngIf="(resident$ | async)?.picture" alt="Resident picture" [src]="(resident$ | async)?.picture" />
