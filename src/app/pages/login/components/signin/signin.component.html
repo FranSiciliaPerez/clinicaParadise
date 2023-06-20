@@ -22,7 +22,7 @@
           </ion-item>
         </ion-list> 
           <ion-button color="tertiary" [disabled]="!form.valid" (click)="onSignIn()" (click)="showLoading()">{{'login.send' | translate}}</ion-button>
-          <ion-button (click)="register()" color="dark" >
+          <ion-button (click)="register()" (click)="showLoading()" color="dark" >
             <small>{{'register.register' | translate }}</small>
           </ion-button>
       </form>    
