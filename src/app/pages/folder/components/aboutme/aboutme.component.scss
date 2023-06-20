@@ -5,18 +5,20 @@
       margin: 0 auto;
   }
   
-    ion-content{
-      margin-top: 10%;
-      padding: 10px;
-    }
-  
     ion-img{
-      width: 100%;
-      padding: 1px;
+      width: 50%;
+      padding: 10px;
+      float: left;
     }
     ion-item{
       width: 50%;
       margin-left: 25%;
+      padding: 10px;
+    }
+    p{
+      float: right;
+      width: 50%;
+      padding: 5px;
     }
   }
   
@@ -30,12 +32,6 @@
     ion-img{
       width: 100%;
       padding: 10px;
-    }
-  
-      ion-button{
-      width: 100%;
-      padding: 2px;
-      margin: auto;
     }
   }
   
