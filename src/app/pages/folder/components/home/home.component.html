@@ -4,21 +4,34 @@
     <h6>{{"infoHome.schema" | translate}}</h6>
   </div>
 </div>
-    <ion-slides class="slide-container" #slideRef [options]="slideOptions">
-      <ion-button (click)="nextSlide()">Siguiente</ion-button>
-      <ion-slide>
+
+<div class="slide-container">
+  <ion-slides #slideRef [options]="slideOptions">
+    <ion-slide>
+      <div class="slide-content">
         <p>{{ 'homeText1' | translate }}</p>
         <img src="../../../../../assets/images/fotos/carer.jpg" alt="Logo" />
-      </ion-slide>
-      <ion-button (click)="prevSlide()">Anterior</ion-button>
-      <ion-slide class="slide">
+      </div>
+    </ion-slide>
+    <ion-slide class="slide">
+      <div class="slide-content">
         <img src="../../../../../assets/images/fotos/mayorFeliz.jpg" alt="Reloj" />
-      </ion-slide>
-
-      <ion-slide class="slide">
+      </div>
+    </ion-slide>
+    <ion-slide class="slide">
+      <div class="slide-content">
         <p>{{ 'homeText3' | translate }}</p>
         <img src="../../../../../assets/images/fotos/resident.jpg" alt="Comenzar" />
-      </ion-slide>
-    </ion-slides>
-    <ion-button (click)="prevSlide()">Anterior</ion-button>
-    <ion-button (click)="nextSlide()">Siguiente</ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="slide-nav">
+    <ion-button class="prev-button" (click)="prevSlide()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-button class="next-button" (click)="nextSlide()">
+      <ion-icon name="arrow-forward"></ion-icon>
+    </ion-button>
+  </div>
+</div>
