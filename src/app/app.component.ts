@@ -7,7 +7,6 @@ import { UserService } from './core/services/user.service';
 import { IonSplitPane, MenuController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';//simbolo circular de carga
 import { AlertController, ModalController } from '@ionic/angular';
-import { Platform } from '@ionic/angular';//modo ocsuro predeterminado
 
 @Component({
   selector: 'app-root',
@@ -33,10 +32,8 @@ export class AppComponent implements AfterViewInit {
     private menuController: MenuController,
     private loadingCtrl: LoadingController,//simbolo circular de carga
     private alert:AlertController,
-    private platform: Platform//modo ocsuro predeterminado
   ) {
     this.init();
-    this.setDarkMode();
   }
 
   private async init() {
@@ -78,7 +75,6 @@ export class AppComponent implements AfterViewInit {
     await alert.present();
     const { role } = await alert.onDidDismiss();
   }
-
   closeMenuToggle() {
     this.menuController.toggle();
   }
@@ -89,11 +85,5 @@ export class AppComponent implements AfterViewInit {
     });
 
     loading.present();
-  }
-  setDarkMode() {//modo ocsuro predeterminado
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    if (prefersDark.matches) {
-      document.body.classList.toggle('dark');
-    }
   }
 }

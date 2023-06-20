@@ -3,12 +3,10 @@
     <ion-router-outlet id="main-content"></ion-router-outlet>
     <ion-menu contentId="main-content" type="push" side="end">
       <ion-content color="tertiary">
-        <ion-fab vertical="top" horizontal="end" slot="fixed">
-          <ion-button id="hover-trigger"  (click)="logOut()" button>
-            <ion-icon slot="start" name="close-circle-outline" [style.color]="'red'"></ion-icon>
-            <ion-label>{{"home.close" | translate}}</ion-label>
-          </ion-button>
-        </ion-fab>
+        <ion-button  id="hover-trigger" (click)="logOut()" button>
+          <ion-icon slot="end" name="close-circle-outline" [style.color]="'red'"></ion-icon>
+          <ion-label>{{"home.close" | translate}}</ion-label>
+        </ion-button>
         
         <ion-img id="click-trigger" vertical="top" horizontal="end" src="./../assets/icon/faviconCruz.jpg"></ion-img>
           <ion-popover trigger="click-trigger" triggerAction="click">
@@ -16,10 +14,8 @@
               <ion-content class="ion-padding">{{"home.title" | translate }}</ion-content>
             </ng-template>
           </ion-popover>
-          <h6>{{"home.title" | translate}}</h6>
+          <h4 id="name">{{"home.title" | translate}}</h4>
         <ion-list id="inbox-list">
-          
-            
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
               routerLinkActive="selected">
@@ -29,12 +25,11 @@
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
-
     </ion-menu>
+    
   </ion-split-pane>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="dark"><ion-badge
-      color="warning">3</ion-badge>
+    <ion-fab-button color="dark"><ion-badge color="warning">3</ion-badge>
       <ion-icon size="big" name="language-outline" [style.color]="'chocolate'"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="top">
@@ -49,5 +44,6 @@
       </ion-fab-button>
     </ion-fab-list>
   </ion-fab>
+
   <ion-router-outlet *ngIf="!(user.isLogged$ | async)"></ion-router-outlet>
 </ion-app>
