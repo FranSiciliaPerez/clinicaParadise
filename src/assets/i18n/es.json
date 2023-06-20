@@ -70,7 +70,8 @@
     },
     "aboutMe":{
         "text":"Creador de la app: Francisco Javier Sicilia Pérez.",
-        "text2":"Descripcion: Esta aplicacion es solo para uso escolar, realizada en la asignastura Aceso a Datos."
+        "text2":"Descripcion: Esta aplicacion es solo para uso escolar, realizada en la asignastura Aceso a Datos.",
+        "text3":"Haz click aqui"
     },
     "infoHome":{
         "info":"Bienvenido a la aplicación: Clinica Paradise especifica para la gestión de una residencia de personas mayores.",

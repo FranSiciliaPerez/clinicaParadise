@@ -68,7 +68,8 @@
     },
     "aboutMe":{
         "text":"Creator of this app: Francisco Javier Sicilia Pérez",
-        "text2":"Description: This app uses is for schools only, maked in the subject Data Acces"
+        "text2":"Description: This app uses is for schools only, maked in the subject Data Acces",
+        "text3":"Click here"
     },
     "infoHome":{
         "info":"Welcome to the application: Clinica Paradise specifically for the management of a residence for the elderly.",
