@@ -1,3 +1,4 @@
+import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 
@@ -7,10 +8,10 @@ import { IonSlides } from '@ionic/angular';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  slides: IonSlides;
+  @ViewChild('slideRef') slides: IonSlides;
 
   slideOptions = {
-    initialSlide: 0, // Slide inicial
+    initialSlide: 0, 
     autoplay: {
       delay: 2000, 
     },

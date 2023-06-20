@@ -5,11 +5,12 @@
   </div>
 </div>
     <ion-slides class="slide-container" #slideRef [options]="slideOptions">
+      <ion-button (click)="nextSlide()">Siguiente</ion-button>
       <ion-slide>
         <p>{{ 'homeText1' | translate }}</p>
         <img src="../../../../../assets/images/fotos/carer.jpg" alt="Logo" />
       </ion-slide>
-
+      <ion-button (click)="prevSlide()">Anterior</ion-button>
       <ion-slide class="slide">
         <img src="../../../../../assets/images/fotos/mayorFeliz.jpg" alt="Reloj" />
       </ion-slide>
@@ -19,4 +20,5 @@
         <img src="../../../../../assets/images/fotos/resident.jpg" alt="Comenzar" />
       </ion-slide>
     </ion-slides>
-
+    <ion-button (click)="prevSlide()">Anterior</ion-button>
+    <ion-button (click)="nextSlide()">Siguiente</ion-button>
