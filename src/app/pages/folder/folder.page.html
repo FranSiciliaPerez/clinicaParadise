@@ -1,8 +1,10 @@
 <ion-header [translucent]="true">
-  <ion-toolbar  color="chocolate"> 
+  <ion-toolbar  color="tertiary"> 
     <ion-buttons>
       <ion-menu-button></ion-menu-button>
       <ion-title>{{folder}}</ion-title>
+      <ion-icon name="person-circle-outline"></ion-icon>
+      {{(user.user$ | async).first_name}} {{(user.user$ | async).last_name}}
     </ion-buttons> 
     
   </ion-toolbar>
@@ -11,7 +13,6 @@
 <ion-content  [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-menu-button></ion-menu-button>
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
