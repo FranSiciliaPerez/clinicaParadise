@@ -5,7 +5,7 @@ import { FirebaseService } from './core/services/firebase/firebase-service';
 import { LocaleService } from './core/services/locale.service';
 import { UserService } from './core/services/user.service';
 import { IonSplitPane, MenuController } from '@ionic/angular';
-import { LoadingController } from '@ionic/angular';//simbolo circular de carga
+import { LoadingController } from '@ionic/angular';//Efecto cargando
 import { AlertController, ModalController } from '@ionic/angular';
 
 @Component({
@@ -30,7 +30,7 @@ export class AppComponent implements AfterViewInit {
     public user: UserService,
     private router: Router,
     private menuController: MenuController,
-    private loadingCtrl: LoadingController,//simbolo circular de carga
+    private loadingCtrl: LoadingController,//simbolo de carga
     private alert:AlertController,
   ) {
     this.init();
@@ -83,7 +83,7 @@ export class AppComponent implements AfterViewInit {
   closeMenuToggle() {
     this.menuController.toggle();
   }
-  async showLoading() {//simbolo circular de carga
+  async showLoading() {//simbolo de carga
     const loading = await this.loadingCtrl.create({
       message: 'Loading...',
       duration: 500,
