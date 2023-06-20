@@ -54,11 +54,16 @@ export class AppComponent implements AfterViewInit {
         {
           text: 'Yes',
           role: 'confirm',
-          handler: () => {
+          handler: async () => {
             console.log()
             this.user.signOut();
             this.router.navigate(['login']);
-            this.showLoading;
+            const loading = await this.loadingCtrl.create({
+              message: 'Loading...',
+              duration: 500,
+            });
+        
+            loading.present();
           },
         },
         {
