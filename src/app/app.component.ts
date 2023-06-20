@@ -6,6 +6,7 @@ import { LocaleService } from './core/services/locale.service';
 import { UserService } from './core/services/user.service';
 import { IonSplitPane, MenuController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';//simbolo circular de carga
+import { AlertController, ModalController } from '@ionic/angular';
 //import { Platform } from '@ionic/angular';//modo ocsuro predeterminado
 
 @Component({
@@ -31,6 +32,7 @@ export class AppComponent implements AfterViewInit {
     private router: Router,
     private menuController: MenuController,
     private loadingCtrl: LoadingController,//simbolo circular de carga
+    private alert:AlertController,
     //private platform: Platform//modo ocsuro predeterminado
   ) {
     this.init();
@@ -47,10 +49,36 @@ export class AppComponent implements AfterViewInit {
     this.translate.setDefaultLang(language)
   }
 
-  signOut() {
-    this.user.signOut();
-    this.router.navigate(['login']);
+
+  async logOut(){//ventana de alerta cuando pulse el boton de cerrar sesion
+    const alert = await this.alert.create({
+      header: '¿Are you sure you want to close the sesion?',
+      buttons: [
+        {
+          text: 'Yes',
+          role: 'confirm',
+          handler: () => {
+            console.log()
+            this.user.signOut();
+            this.router.navigate(['login']);
+            this.showLoading;
+          },
+        },
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            console.log("Operation canceled");
+          },
+        },
+        
+      ],
+    });
+
+    await alert.present();
+    const { role } = await alert.onDidDismiss();
   }
+
   closeMenuToggle() {
     this.menuController.toggle();
   }
