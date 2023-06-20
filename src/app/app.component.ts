@@ -5,17 +5,18 @@ import { FirebaseService } from './core/services/firebase/firebase-service';
 import { LocaleService } from './core/services/locale.service';
 import { UserService } from './core/services/user.service';
 import { IonSplitPane, MenuController } from '@ionic/angular';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';//simbolo circular de carga
+//import { Platform } from '@ionic/angular';//modo ocsuro predeterminado
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements AfterViewInit{
-  
+export class AppComponent implements AfterViewInit {
+
   public appPages = [
-    { title: 'Home', url: '/folder/Home', icon: 'home', /*otra manera de darle color al icono -> [style.color]="p.color" esto iria en el ion icon html y esto en est linea -> color: '#0f0'*/},
+    { title: 'Home', url: '/folder/Home', icon: 'home', /*otra manera de darle color al icono -> [style.color]="p.color" esto iria en el ion icon html y esto en est linea -> color: '#0f0'*/ },
     { title: 'Residents', url: '/folder/Residents', icon: 'person' },
     { title: 'Carers', url: '/folder/Carers', icon: 'people' },
     { title: 'ResidentManage', url: '/folder/Managements', icon: 'folder' },
@@ -23,35 +24,37 @@ export class AppComponent implements AfterViewInit{
   ];
   public labels = [];
   constructor(
-    private firebase:FirebaseService,
+    private firebase: FirebaseService,
     private translate: TranslateService,
-    private locale:LocaleService,
-    public user:UserService,
-    private router:Router,
-    private menuController: MenuController,//creo q es esto
-    private loadingCtrl: LoadingController
+    private locale: LocaleService,
+    public user: UserService,
+    private router: Router,
+    private menuController: MenuController,
+    private loadingCtrl: LoadingController,//simbolo circular de carga
+    //private platform: Platform//modo ocsuro predeterminado
   ) {
     this.init();
-    
+    //this.setDarkMode();
   }
-  private async init(){
+
+  private async init() {
     this.translate.setDefaultLang('en');
   }
   ngAfterViewInit(): void {
-  
+
   }
-  onLanguage(language:string){
+  onLanguage(language: string) {
     this.translate.setDefaultLang(language)
   }
 
-  signOut(){
+  signOut() {
     this.user.signOut();
     this.router.navigate(['login']);
   }
   closeMenuToggle() {
-    this.menuController.toggle(); //y esto
+    this.menuController.toggle();
   }
-  async showLoading() {
+  async showLoading() {//simbolo circular de carga
     const loading = await this.loadingCtrl.create({
       message: 'Loading...',
       duration: 500,
@@ -59,5 +62,10 @@ export class AppComponent implements AfterViewInit{
 
     loading.present();
   }
-
+  /*setDarkMode() {//modo ocsuro predeterminado
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    if (prefersDark.matches) {
+      document.body.classList.toggle('dark');
+    }
+  }*/
 }

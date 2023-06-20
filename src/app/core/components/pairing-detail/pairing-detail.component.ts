@@ -40,6 +40,7 @@ export class ManageDetailComponent implements OnInit {
   ) { 
     this.form = this.fb.group({
       id:[0],
+      docId:[0],
       carerId:['-1', [Validators.min(1)]],
       residentId:['-1', [Validators.min(1)]],
     });
