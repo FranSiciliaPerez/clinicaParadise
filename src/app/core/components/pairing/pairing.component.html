@@ -4,8 +4,8 @@
     <ion-avatar class="carer">
       <img *ngIf="!(carer$ | async)?.picture" alt="Carer silhouette" src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f464.svg" />
       <img *ngIf="(carer$ | async)?.picture" alt="Carer picture" [src]="(carer$ | async)?.picture" />
-      {{ (carer$ | async)?.name }}
-    </ion-avatar>
+      <label textAlign="center">{{ (carer$ | async)?.name }}</label>
+    </ion-avatar><br>
     <ion-icon name="chevron-down-outline"></ion-icon>
     <ion-avatar class="resident$">
       <img *ngIf="!(resident$ | async)?.picture" alt="Resident silhouette" src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f464.svg" />
