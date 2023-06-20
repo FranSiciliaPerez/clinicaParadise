@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     autoplay: {
       delay: 2000, 
     },
-    speed: 500, 
+    speed: 2000, 
   };
   ngOnInit() {}
    // Función para pasar al siguiente slide al hacer clic en un botón

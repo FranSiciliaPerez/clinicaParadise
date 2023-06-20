@@ -14,7 +14,10 @@
   justify-content: center;
   text-align: center;
 }
-
+.slide-content img {
+  width: 100%;
+  height: auto;
+}
 .slide-nav {
   position: absolute;
   top: 50%;
