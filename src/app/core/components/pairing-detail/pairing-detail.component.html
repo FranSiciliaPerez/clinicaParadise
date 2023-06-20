@@ -2,13 +2,13 @@
   
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item-divider>
-      <ion-label>
+      <ion-label style="color: white;">
       {{'pairing-detail.carers' | translate}}
       </ion-label>
     </ion-item-divider>
     <app-carer-selectable formControlName="carerId"></app-carer-selectable>
     <ion-item-divider>
-      <ion-label>
+      <ion-label style="color: white;">
         {{'pairing-detail.residents' | translate}}
       </ion-label>
     </ion-item-divider>
