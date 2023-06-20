@@ -1,11 +1,11 @@
 <div class="container">
   <div class="infoHome">
-    <h2>{{"infoHome.info" | translate}}</h2>
-    <h2>{{"infoHome.schema" | translate}}</h2>
+    <h6>{{"infoHome.info" | translate}}</h6>
+    <h6>{{"infoHome.schema" | translate}}</h6>
   </div>
 </div>
-    <ion-slides>
-      <ion-slide class="slide">
+    <ion-slides class="slide-container" #slideRef [options]="slideOptions">
+      <ion-slide>
         <p>{{ 'homeText1' | translate }}</p>
         <img src="../../../../../assets/images/fotos/carer.jpg" alt="Logo" />
       </ion-slide>
@@ -19,5 +19,4 @@
         <img src="../../../../../assets/images/fotos/resident.jpg" alt="Comenzar" />
       </ion-slide>
     </ion-slides>
-  <ion-progress-bar type="indeterminate"></ion-progress-bar>
 
